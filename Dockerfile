@@ -12,5 +12,6 @@ FROM openjdk:17-jdk-slim
 EXPOSE 8080
 
 COPY --from=build /target/demo-mvc-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/.env /app/.env
 
 ENTRYPOINT [ "java", "-jar", "app.jar" ]
